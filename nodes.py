@@ -72,13 +72,11 @@ def handle_memory_question(state:AgentState) -> Dict:
     
     user = get_user()
     if state["intent"] == "get_name" :
-        ans = {
-            f"Your name is {state.get("user_name")}" if user else "Oopsy ! I don't know you"
-        }
+        ans = f"Your name is {state.get("user_name")}" if user else "Oopsy ! I don't know you"
+        
     elif state["intent"] == "get_age" :
-        ans = {
-            f"You are {state.get("age")} years old ! \n It seems like you are not that old I guess 😉" if user["age"] else "It seems like I don't know your age 🥺"
-        }
+        ans = f"You are {state.get("age")} years old ! \n It seems like you are not that old I guess 😉" if user["age"] else "It seems like I don't know your age 🥺"
+        
     
     return {"answer":ans}
 
