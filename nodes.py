@@ -64,7 +64,7 @@ def ask_age(state:AgentState) -> Dict:
         return {"age": age}
     return {"age":None}
 
-def handle_memory_question_node(state:AgentState) -> Dict:
+def handle_memory_question(state:AgentState) -> Dict:
     """
     Based on what is stored in the long term memory (our DB), the user gets a response based 
     on their personal details  

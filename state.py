@@ -1,3 +1,4 @@
+#global state for the graph at runtime 
 from typing import TypedDict, Optional, Annotated
 from langgraph.graph.message import add_messages
 

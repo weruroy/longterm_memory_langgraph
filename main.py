@@ -25,7 +25,6 @@ load_dotenv() # Loads the OPENAI_API_KEY , make sure your key is set in the secr
 init_db()   
 
 # Constructing the graph
-
 builder = StateGraph(AgentState)
 
 # Adding nodes to graph state
@@ -42,6 +41,8 @@ builder.add_node("general", general_response)
 builder.add_edge(START, "detect_intent")
 builder.add_edge("detect_intent", "check_user")
 
+ #conditional edges and routing at this point
+ 
 def route(state:AgentState):
     if state["intent"] == "get_name" :
         return "memory"
